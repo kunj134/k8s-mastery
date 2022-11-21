@@ -1,4 +1,4 @@
-FROM python:3.6-slim
+FROM python:3.6.6-alpine
 COPY sa /app
 WORKDIR /app
 RUN pip3 install -r requirements.txt && \
