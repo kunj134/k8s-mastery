@@ -4,7 +4,8 @@ WORKDIR /sa-webapp
 RUN mvn install
 #COPY src /sa-webapp/src
 
-ENV SA_LOGIC_API_URL http://localhost:5000
+ENV SA_LOGIC_API_URL http://10.99.182.25:80
+#http://localhost:5000
 
 FROM openjdk:8-jre-alpine
 COPY --from=builder /sa-webapp/target/sentiment-analysis-web-0.0.1-SNAPSHOT.jar ./
