@@ -40,7 +40,7 @@ pipeline {
                   script{
           echo "Test code from github"
           sh  '''
-          echo "#########"| docker login --username kunjan134 --password-stdin
+          echo "Guitarstars@134"| docker login --username kunjan134 --password-stdin
           cd sa-frontend          docker build -t frontapp .
           docker tag frontapp kunjan134/frontapp-test:latest-${BUILD_NUMBER}
           docker push kunjan134/frontapp-test:latest-${BUILD_NUMBER}
