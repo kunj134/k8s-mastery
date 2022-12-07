@@ -41,17 +41,18 @@ pipeline {
           echo "Test code from github"
           sh  '''
           echo "Guitarstars@134"| docker login --username kunjan134 --password-stdin
-          cd sa-frontend          docker build -t frontapp .
-          docker tag frontapp kunjan134/frontapp-test:latest-${BUILD_NUMBER}
-          docker push kunjan134/frontapp-test:latest-${BUILD_NUMBER}
+          cd sa-frontend          
+          docker build -t frontapp .
+          docker tag frontapp kunjan134/frontapp:latest-${BUILD_NUMBER}
+          docker push kunjan134/frontapp:latest-${BUILD_NUMBER}
           cd ../sa-logic/
           docker build -t logicapp .
-          docker tag logicapp kunjan134/logicapp-test:latest-${BUILD_NUMBER}
-          docker push kunjan134/logicapp-test:latest-${BUILD_NUMBER}
+          docker tag logicapp kunjan134/logicapp:latest-${BUILD_NUMBER}
+          docker push kunjan134/logicapp:latest-${BUILD_NUMBER}
           cd ../sa-webapp/
           docker build -t webapp .
-          docker tag webapp kunjan134/webapp-test:latest-${BUILD_NUMBER}
-          docker push kunjan134/webapp-test:latest-${BUILD_NUMBER}
+          docker tag webapp kunjan134/webapp:latest-${BUILD_NUMBER}
+          docker push kunjan134/webapp:latest-${BUILD_NUMBER}
           '''
         }
         }
