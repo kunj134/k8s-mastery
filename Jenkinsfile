@@ -53,7 +53,6 @@ pipeline {
           docker tag webapp kunjan134/webapp-test:latest-${BUILD_NUMBER}
           docker push kunjan134/webapp-test:latest-${BUILD_NUMBER}
           '''
-          '''
         }
         }
       }
